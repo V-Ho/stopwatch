@@ -7,6 +7,8 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
     body, .jumbotron { padding: 30px }
+    .timer
+      {font-size: 60px;}
     </style>
   </head>
   <body>
@@ -15,9 +17,10 @@
       <!--  timer -->
       <div class="timer">
         <span class="minutes">00</span> : <span class="seconds">00</span>
+      </div>
         <!--  span class minutes contains span class seconds-->
-      <div class="timer-buttons">
 
+      <div class="timer-buttons">
         <!--  using 'data-' indicates javascript tag-->
         <button class="btn btn-lg btn-success" data-action="start">
           Start
@@ -29,16 +32,22 @@
           Reset
         </button>
       </div>
-      </div>
     </div>
 
     <script>
     // document.querySelector('[ ]') allows us to access html attribute
-      const startButton = document.querySelector('[data-action="start"]')
-      const stopButton = document.querySelector('[data-action="stop"]')
-      const resetButton = document.querySelector('[data-action="reset"]')
-      const minutes = document.querySelector('minutes')
-      const seconds = document.querySelector('seconds')
+      const startButton = document.querySelector('[data-action="start"]');
+      const stopButton = document.querySelector('[data-action="stop"]');
+      const resetButton = document.querySelector('[data-action="reset"]');
+      const minutes = document.querySelector('.minutes');
+      const seconds = document.querySelector('.seconds');
+      let timerTime = 00;
+
+      window.onload = setInterval(function() {
+        timerTime++;
+        seconds.innerText = timerTime;
+        console.count('hello')
+      }, 1000);
 
       function startTimer() {
 
@@ -49,7 +58,7 @@
       }
 
       function resetTimer(){
-        
+
       }
 
 

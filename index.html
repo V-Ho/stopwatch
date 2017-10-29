@@ -10,6 +10,53 @@
     </style>
   </head>
   <body>
+    <div class="jumbotron text-center">
+
+      <!--  timer -->
+      <div class="timer">
+        <span class="minutes">00</span> : <span class="seconds">00</span>
+        <!--  span class minutes contains span class seconds-->
+      <div class="timer-buttons">
+
+        <!--  using 'data-' indicates javascript tag-->
+        <button class="btn btn-lg btn-success" data-action="start">
+          Start
+        </button>
+        <button class="btn btn-lg btn-danger" data-action="stop">
+          Stop
+        </button>
+        <button class="btn btn-link btn-block" data-action ="reset">
+          Reset
+        </button>
+      </div>
+      </div>
+    </div>
+
+    <script>
+    // document.querySelector('[ ]') allows us to access html attribute
+      const startButton = document.querySelector('[data-action="start"]')
+      const stopButton = document.querySelector('[data-action="stop"]')
+      const resetButton = document.querySelector('[data-action="reset"]')
+      const minutes = document.querySelector('minutes')
+      const seconds = document.querySelector('seconds')
+
+      function startTimer() {
+
+      }
+
+      function stopTimer() {
+
+      }
+
+      function resetTimer(){
+        
+      }
+
+
+      startButton.addEventListener('click', startTimer)
+      stopButton.addEventListener('click', stopTimer)
+      resetButton.addEventListener('click', resetTimer)
+    </script>
 
   </body>
 </html>

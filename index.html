@@ -41,12 +41,17 @@
       const resetButton = document.querySelector('[data-action="reset"]');
       const minutes = document.querySelector('.minutes');
       const seconds = document.querySelector('.seconds');
-      let timerTime = 00;
+      let timerTime = 88;
 
       window.onload = setInterval(function() {
-        timerTime++;
-        seconds.innerText = timerTime;
-        console.count('hello')
+        timerTime++
+        const numofMinutes = Math.floor(timerTime/60)
+        const numofSeconds = timerTime % 60 //gives us remainder of timerTime after dividing by 60
+        console.log({numofMinutes,numofSeconds}) // gives both label and value while incrementing ++
+        minutes.innerText = numofMinutes
+        seconds.innerText = numofSeconds
+
+        // console.count('hello')
       }, 1000);
 
       function startTimer() {

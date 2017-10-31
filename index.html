@@ -41,14 +41,21 @@
       const resetButton = document.querySelector('[data-action="reset"]');
       const minutes = document.querySelector('.minutes');
       const seconds = document.querySelector('.seconds');
-      let timerTime = 00;
+      let timerTime = 00
+      let isRunning = false //need to check if timer is running when clicking Start, otherwise we start a new interval which speeds up timer
+      let interval
+
 
       function startTimer() {
+        if(isRunning) return //if timer is running, no need to run rest of function
+        isRunning = true
         interval = setInterval(incrementTimer, 1000)
         // calling setInterval function, passing in incrementTimer and milliseconds
       }
 
       function stopTimer() {
+        if(!isRunning) return
+        isRunning = false
         clearInterval(interval)
         //clearInterval js function passing in setInterval stored in interval
       }

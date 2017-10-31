@@ -43,19 +43,9 @@
       const seconds = document.querySelector('.seconds');
       let timerTime = 88;
 
-      window.onload = setInterval(function() {
-        timerTime++
-        const numofMinutes = Math.floor(timerTime/60)
-        const numofSeconds = timerTime % 60 //gives us remainder of timerTime after dividing by 60
-        console.log({numofMinutes,numofSeconds}) // gives both label and value while incrementing ++
-        minutes.innerText = numofMinutes
-        seconds.innerText = numofSeconds
-
-        // console.count('hello')
-      }, 1000);
-
       function startTimer() {
-
+        interval = setInterval(incrementTimer, 1000)
+        // calling setInterval function, passing in incrementTimer and milliseconds
       }
 
       function stopTimer() {
@@ -64,6 +54,27 @@
 
       function resetTimer(){
 
+      }
+
+      function incrementTimer(){
+        timerTime++
+        const numofMinutes = Math.floor(timerTime/60)
+        const numofSeconds = timerTime % 60
+        //gives us remainder of timerTime after dividing by 60
+        console.log({numofMinutes,numofSeconds})
+        // gives both label and value of minutes & secs while incrementing ++
+        minutes.innerText = numofMinutes
+        seconds.innerText = numofSeconds
+
+      }
+
+      function pad(number){
+        return (number > 10) ? '0' + number : number //ternary operator same as function below
+      //   if (number > 10) {
+      //     return '0' + number
+      //   } else {
+      //     return number
+      //   }
       }
 
 

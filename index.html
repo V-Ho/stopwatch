@@ -42,8 +42,8 @@
       const minutes = document.querySelector('.minutes');
       const seconds = document.querySelector('.seconds');
       let timerTime = 00
-      let isRunning = false //need to check if timer is running when clicking Start, otherwise we start a new interval which speeds up timer
-      let interval
+      let isRunning = false //boolean that checks if timer is running when clicking Start, otherwise we start a new interval which speeds up timer
+      let interval   //declare interval now so it can be used later
 
 
       function startTimer() {
@@ -61,6 +61,10 @@
       }
 
       function resetTimer(){
+        stopTimer()
+        timerTime = 0
+        minutes.innerText = '00'
+        seconds.innerText = '00'
 
       }
 

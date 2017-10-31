@@ -41,7 +41,7 @@
       const resetButton = document.querySelector('[data-action="reset"]');
       const minutes = document.querySelector('.minutes');
       const seconds = document.querySelector('.seconds');
-      let timerTime = 88;
+      let timerTime = 00;
 
       function startTimer() {
         interval = setInterval(incrementTimer, 1000)
@@ -49,7 +49,8 @@
       }
 
       function stopTimer() {
-
+        clearInterval(interval)
+        //clearInterval js function passing in setInterval stored in interval
       }
 
       function resetTimer(){
@@ -63,13 +64,14 @@
         //gives us remainder of timerTime after dividing by 60
         console.log({numofMinutes,numofSeconds})
         // gives both label and value of minutes & secs while incrementing ++
-        minutes.innerText = numofMinutes
-        seconds.innerText = numofSeconds
+        minutes.innerText = pad(numofMinutes)
+        seconds.innerText = pad(numofSeconds)
+        //pad function displays 0 if num < 10
 
       }
 
       function pad(number){
-        return (number > 10) ? '0' + number : number //ternary operator same as function below
+        return (number < 10) ? '0' + number : number //ternary operator same as function below
       //   if (number > 10) {
       //     return '0' + number
       //   } else {
